@@ -1,0 +1,24 @@
+# Areas of code where owners always wants to be a reviewer/notified.
+/api                    @eddycharly @realshuting
+/api/kyverno/v1         @eddycharly
+/charts                 @eddycharly
+/docs                   
+/pkg/autogen            @eddycharly
+/pkg/background         @realshuting
+/pkg/engine             @eddycharly @realshuting @MariamFahmy98 @KhaledEmaraDev
+/pkg/event              @KhaledEmaraDev @aerosouund
+/pkg/globalcontext      @KhaledEmaraDev @liuxu623
+/pkg/policy/mutate      @realshuting @aerosouund
+/pkg/pss                @realshuting @YTGhost
+/pkg/utils              @eddycharly
+/pkg/userinfo           @realshuting
+/pkg/validation         @realshuting
+/pkg/webhooks           @eddycharly @realshuting
+/test                   @eddycharly @realshuting @MariamFahmy98 @KhaledEmaraDev
+/pkg/cosign             @Vishal-Chdhry
+/pkg/notary             @Vishal-Chdhry
+/cmd/cli/               @aerosouund
+/pkg/openreports        @aerosouund
+/pkg/controller/report  @aerosouund
+/pkg/cel                @aerosouund
+/pkg/admissionpolicy    @aerosouund

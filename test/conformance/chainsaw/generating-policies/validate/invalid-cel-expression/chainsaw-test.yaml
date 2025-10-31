@@ -1,0 +1,12 @@
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: invalid-cel-expression
+spec:
+  steps:
+  - name: Apply the policy
+    try:
+    - script:
+        content: kubectl apply -f policy.yaml
+        check:
+          ($error != null): true

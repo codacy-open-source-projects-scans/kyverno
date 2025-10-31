@@ -1,0 +1,10 @@
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: expected-webhooks
+spec:
+  steps:
+  - name: step-01
+    try:
+    - assert:
+        file: webhooks.yaml
