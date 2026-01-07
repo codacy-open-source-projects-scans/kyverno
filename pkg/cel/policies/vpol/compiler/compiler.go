@@ -20,6 +20,7 @@ import (
 	"github.com/kyverno/kyverno/pkg/cel/libs/random"
 	"github.com/kyverno/kyverno/pkg/cel/libs/resource"
 	"github.com/kyverno/kyverno/pkg/cel/libs/time"
+	"github.com/kyverno/kyverno/pkg/cel/libs/transform"
 	"github.com/kyverno/kyverno/pkg/cel/libs/user"
 	"github.com/kyverno/kyverno/pkg/cel/libs/x509"
 	"github.com/kyverno/kyverno/pkg/cel/libs/yaml"
@@ -231,7 +232,7 @@ func (c *compilerImpl) createBaseVpolEnv(namespace string) (*environment.EnvSet,
 		cel.Variable(compiler.VariablesKey, compiler.VariablesType),
 	)
 
-	base := environment.MustBaseEnvSet(vpolCompilerVersion, false)
+	base := environment.MustBaseEnvSet(vpolCompilerVersion)
 	env, err := base.Env(environment.StoredExpressions)
 	if err != nil {
 		return nil, nil, err
@@ -300,6 +301,9 @@ func (c *compilerImpl) createBaseVpolEnv(namespace string) (*environment.EnvSet,
 				),
 				time.Lib(
 					time.Latest(),
+				),
+				transform.Lib(
+					transform.Latest(),
 				),
 			},
 		},
